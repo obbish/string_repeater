@@ -7,12 +7,10 @@ use std::{
     },
     thread::{self, JoinHandle},
     time::{Duration, Instant},
-    env,
 };
 
 const LOG_FILE_PATH: &str = "stats.log";
 const LOG_UPDATE_INTERVAL_MS: u64 = 1000; // Update log every 1000ms (1 second)
-const LOG_LINE_WIDTH: usize = 100; // Fixed width for log line
 
 /// The worker task that repeatedly processes the user's string.
 /// This will run in multiple threads.
