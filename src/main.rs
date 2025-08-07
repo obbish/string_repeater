@@ -7,7 +7,6 @@ use std::{
     },
     thread::{self, JoinHandle},
     time::{Duration, Instant},
-    env::var,
 };
 
 const LOG_FILE_PATH: &str = "stats.log";
@@ -79,8 +78,8 @@ fn logger_task(
                 }
             }
 
-            // Print to console (same content as log file)
-            println!("{}", padded_stats_string);
+            // Print to console (same content as log file - no newlines)
+            print!("{}", padded_stats_string);
 
             last_log_time = Instant::now();
         }
